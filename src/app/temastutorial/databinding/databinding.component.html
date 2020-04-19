@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-12">
+        <h1>{{ titulotema }}!</h1>
+        <p>Es la capacidad que tiene angular para relacionar los datos de la clase TS con la vista de una
+            manera muy simple
+        </p>
+        <hr>
+    </div>
+    <div class="col-12">
+        <h2>{{temasinterpolacion}}</h2>
+        <p>Angular de encargar de insertar el valor de esta propiedad del componente entre las etiquetas div</p>
+        <hr>
+    </div>
+    <div class="col-12">
+        <h3>{{propetybinding}}</h3>
+        <p>[todo]= "selectodo" Angular esta pasasando el objeto selectodo del componente padre a la propiedad
+            todo del componente hijo </p>
+        <h3>Componente hijo</h3>
+        <app-contenido [personas]="personas"></app-contenido>
+        <hr>
+    </div>
+    <div class="col-6">
+        <h3>{{eventbinding}}</h3>
+        <p>(click)="selecttodo" cuando se produce un evento click sobre la eqitqueta div
+            llama al metodo selecttodo del componente. pasando como atributo el objeto.
+        </p>
+        <h5>Formulario de datos</h5>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" [(ngModel)]="personas.nombre" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="genere">Genero</label>
+            <input type="text" [(ngModel)]="personas.genero" class="form-control" />
+        </div>
+        <button type="button" class="btn btn-primary btn-block">GUARDAR</button>
+    </div>
+    <div class="col-6">
+        <h3>Resultado del event binding</h3>
+        <app-contenido [personas]="personas"></app-contenido>
+    </div>
+</div>

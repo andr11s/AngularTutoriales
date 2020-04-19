@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-10"></div>
+    <div class="col-2">
+        <label for="categoria">Categorias</label>
+        <div class="form-group">
+            <select class="form-control" id="inputGroupSelect01" (change)="eventFilter($event)">
+                <option selected *ngFor="let categoria of categorias; index as i " value="{{categoria.codigo}}">
+                    {{categoria.nombre | titlecase}}</option>
+
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <h1>Noticias EL HERALDO</h1>
+    </div>
+    <div *ngFor="let noticia of noticias">
+
+        <div class="card" style="width: 400px;">
+            <img src="{{noticia.img}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{noticia.nombre}}</h5>
+                <p class="card-text">{{noticia.descripcion}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+
+</div>
