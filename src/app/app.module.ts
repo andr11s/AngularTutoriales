@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+
 
 import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
@@ -11,6 +12,9 @@ import { ContenidoComponent } from './temastutorial/contenido/contenido.componen
 import { DirectivasComponent } from './temastutorial/directivas/directivas.component';
 import { ApphomeComponent } from './apphome/apphome.component';
 import { AppRoutingModule } from './app.routes';
+import { FormreactComponent } from './temastutorial/formreact/formreact.component';
+
+import { PersonasService } from './temastutorial/formreact/formreat.service'
 
 @NgModule({
   declarations: [
@@ -21,14 +25,16 @@ import { AppRoutingModule } from './app.routes';
     DatabindingComponent,
     ContenidoComponent,
     DirectivasComponent,
-    ApphomeComponent
+    ApphomeComponent,
+    FormreactComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PersonasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

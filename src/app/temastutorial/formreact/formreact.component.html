@@ -1,0 +1,45 @@
+<div class="row pt-3">
+    <div class="col-6">
+        <h3>Formulario de datos</h3>
+        <form [formGroup]="formulario" (submit)="onSubmit(formulario)">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="email"
+                    id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted" *ngIf="formulario.controls.email.errors">
+                    Error el campo email
+                </small>
+
+            </div>
+            <div class="form-group">
+                <label for="Inputnombre">Nombre</label>
+                <input type="text" class="form-control" formControlName="name" id="Inputnombre"
+                    placeholder="Nombre completo">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+    </div>
+    <div class="col-6">
+        <h3>Informacion de las personas</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Correo Electronico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dato of Datos; index as i ">
+                    <th scope="row">{{i}}</th>
+                    <td>{{dato.email}}</td>
+                    <td>{{dato.first_name}}</td>
+                    <td><button class="btn btn-block btn-primary" (click)="getPerson(dato.id)">Update</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
